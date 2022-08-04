@@ -64,3 +64,142 @@
 
 ![image](https://user-images.githubusercontent.com/82598726/181828437-03bf1b40-f35c-4e48-8ebd-127ef3a6f49d.png) ![image](https://user-images.githubusercontent.com/82598726/181828759-13c51469-e35d-44d6-af61-dfff064b7536.png) ![image](https://user-images.githubusercontent.com/82598726/181830075-a40dcdfe-519c-4a5d-90cd-c3eb308f8cce.png)
  ![image](https://user-images.githubusercontent.com/82598726/181828843-3ba0f2e8-a5dc-4268-b646-5b21898e1139.png) ![image](https://user-images.githubusercontent.com/82598726/181828934-4524165b-801b-44a8-97b4-3966d2eb3c93.png)
+
+### e. Syntaxes:
+
+- Syntax in Introduction_page.php
+
+/*
+```html
+...
+<head>
+...
+ 
+ <link rel='stylesheet' type='text/css' href='Styling_page.css'>
+ 
+</head>
+     <body>
+     <div id='contents_trending_new_block'>
+
+
+                                        <nav id='ctdnb_buttons'>
+                                            
+
+                                                    <button id="trendingContent_butt" title="trendingContent_butt"
+                                                     type="button"
+                                                    class="changectdnbButton btn text-white
+                                                    w3-hover-blue w3-hover-text-white"
+                                                    data-trendingContent-butt="trendingContent_butt_data"
+                                                      onclick="GetTrendingNewWatchingContents('trending')">
+                                                    TRENDING
+                                                    </button>
+
+
+
+                                                    <button id="newContent_butt" title="newContent_butt"
+                                                     type="button" 
+                                                    class="changectdnbButton btn text-white
+                                                    w3-hover-blue w3-hover-text-white"
+                                                    data-newContent-butt='newContent_butt_data'
+                                                    onclick="GetTrendingNewWatchingContents('new')">
+                                                    NEW ON THPSM
+                                                    </button>
+                                        </nav>
+
+
+
+                                       
+                                        <br><br>
+
+
+                                        <div id='c_trending_new_containers'>
+                                                      <div id='ctnc_block1' class='row row-cols-3'></div>
+                                        </div>
+
+
+
+
+
+                        </div>
+      
+      
+      <script>
+      
+      
+        /*syntax to get trending or new watching contents
+                    and add bottom bar effect when user click a specific button
+                    */
+
+
+                
+                    function GetTrendingNewWatchingContents(val){
+                        let get_trending_next_containers = document.getElementById('ctnc_block1');
+                        if(val == ""){
+                            get_trending_next_containers.innerHTML = "";
+                        }else{
+                            let xml = new XMLHttpRequest();
+                            xml.onreadystatechange = function(){
+                                 if(this.readyState == 4 && this.status == 200){
+                                    get_trending_next_containers.innerHTML = this.responseText;
+                                   
+                                 }
+                                 
+                            }
+                            xml.open('GET','Getting_TrendingNew_Contents.php?content_query='+val,true);
+                            xml.send();
+                        }
+
+                        //conditions below is used to add bottom bar effect
+                        if(val == 'trending'){
+                            //I used this condition to determine when to add 
+                            //or remove a dataset attribute so that I can style it
+                            document.querySelector(".changectdnbButton[data-trendingContent-butt]").setAttribute('data-buttonActive','true');
+                            document.querySelector(".changectdnbButton:not(button[data-trendingContent-butt])").removeAttribute('data-buttonActive');
+                        }else if(val=='new'){
+                            document.querySelector(".changectdnbButton[data-newContent-butt]").setAttribute('data-buttonActive','true');
+                            document.querySelector(".changectdnbButton:not(button[data-newContent-butt])").removeAttribute('data-buttonActive');
+                        }else{
+                              console.log('');
+                        }
+                    }
+
+                    
+                    GetTrendingNewWatchingContents('trending');
+
+
+ 
+      
+      
+      
+      
+      </script>
+```
+*/
+
+/*
+
+
+
+# 4.Files|Folders are being used:
+
+- Introduction_page.php
+
+- Getting_TrendingNew_Contents.php
+
+- Styling_page.css
+
+- XAMPP PHPMyAdmin
+
+
+# 7. Running | Output:
+
+> (This field can contains a lot of pictures to show you how your app or website is running with different tasks)
+> (You just need to take screenshot and paste them into this file and github will generate syntax for upload your picture to this field)
+
+
+# 9. Sources:
+
+> THP_Movie_Streaming_PHP
+
+
+
