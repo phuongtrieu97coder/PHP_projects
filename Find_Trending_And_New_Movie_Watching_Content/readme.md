@@ -174,11 +174,149 @@
       
       </script>
 ```
-*/
 
-/*
+- Syntax in Styling_page.css
+
+```css
 
 
+[id='ctdnb_buttons']{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[id='c_trending_new_containers']{
+   margin:0 60px;
+}
+    
+
+[id='ctnc_block1']{
+   height:800px;
+   overflow-y: auto;
+}
+
+
+[id='ctnc_block1'] > div {
+   margin-bottom:30px;
+  
+}
+
+[id='ctnc_block1'] > div img {
+   border-radius:20px 20px;
+}
+
+
+[id='trendingContent_butt']{
+  font-size:25px;padding:0 10px;
+  background-color: rgba(0, 0, 0, 0);
+                                                    
+}
+
+
+[id='newContent_butt']{
+  font-size:25px;padding:0 10px;
+  background-color: rgba(0, 0, 0, 0);
+                                                    
+}
+
+
+button[data-buttonActive='true']{
+   border-bottom: 4px solid white;
+}
+```
+
+
+- Syntax in Getting_TrendingNew_Contents.php
+
+```php
+<?php
+
+    
+$web_host = 'localhost';
+$admin = 'youradminname';
+$admin_database_pass = '*********';
+$database_name = 'thp_movie_streaming';
+    
+    
+$q1  = $_GET['content_query'];
+    
+    
+ try{
+   $access_database_info = 'mysql:host='.$web_host.';dbname='.$database_name;
+   $conn = new PDO($access_database_info,$admin,$admin_database_pass);
+   $conn -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+   
+   if($q1 == 'trending'){
+     $query1 = "SELECT movies_collection.Movie_Poster
+     FROM tracking_users_watching
+     INNER JOIN movies_collection ON tracking_users_watching.Watching = movies_collection.Title
+     WHERE DateTimeWatching LIKE '2022-08%'
+     GROUP BY Watching
+     HAVING COUNT(Watching)>=1";
+
+
+        
+        $stmt = $conn->prepare($query1);
+        
+        $stmt ->execute();
+        
+        $select_result  = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        
+        foreach($select_result as $val){
+            echo "<div class='col'><img src='".$val['Movie_Poster']."' alt='TrendingContent_img'
+             width='100%' height='400px'></div>";
+        }
+   }
+
+
+
+   if($q1 == 'new'){
+    $query2 = "SELECT Movie_Poster
+    FROM movies_collection
+    WHERE DateTimeAdding LIKE '2022-08%'";
+
+
+       
+       $stmt2 = $conn->prepare($query2);
+       
+       $stmt2 ->execute();
+       
+       $select_result2  = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
+       foreach($select_result2 as $val){
+        echo "<div class='col'><img src='".$val['Movie_Poster']."' alt='NewContent_img'
+         width='100%' height='400px'></div>";
+       }
+  }
+
+   
+   
+ 
+    
+}catch(PDOException $e){
+   echo 'ERROR: '.$e->getMessage();
+}
+    
+ $conn = null;
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+```
 
 # 4.Files|Folders are being used:
 
@@ -193,8 +331,21 @@
 
 # 7. Running | Output:
 
-> (This field can contains a lot of pictures to show you how your app or website is running with different tasks)
-> (You just need to take screenshot and paste them into this file and github will generate syntax for upload your picture to this field)
+![image](https://user-images.githubusercontent.com/82598726/182912919-bb7499c9-a349-4473-be41-264db70839c8.png)
+
+![image](https://user-images.githubusercontent.com/82598726/182913003-d4406b99-859d-4042-a4a1-2de63b7cee87.png)
+
+![image](https://user-images.githubusercontent.com/82598726/182913057-864155f7-1cd7-41cc-9749-73214343c141.png)
+
+![image](https://user-images.githubusercontent.com/82598726/182913281-f3b88c1e-2985-441d-a0eb-d1c5388b21ad.png)
+
+![image](https://user-images.githubusercontent.com/82598726/182913345-257c55a1-336a-4193-a50a-b445f50c6769.png)
+
+![image](https://user-images.githubusercontent.com/82598726/182913453-d14d1f65-8da1-46c4-8ff7-82f1cea0e203.png)
+
+![image](https://user-images.githubusercontent.com/82598726/182913499-7a9c29fa-11f2-45d5-ad10-67b479afee10.png)
+
+
 
 
 # 9. Sources:
