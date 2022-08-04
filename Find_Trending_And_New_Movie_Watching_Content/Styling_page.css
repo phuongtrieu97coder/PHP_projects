@@ -1,0 +1,44 @@
+[id='ctdnb_buttons']{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[id='c_trending_new_containers']{
+   margin:0 60px;
+}
+    
+
+[id='ctnc_block1']{
+   height:800px;
+   overflow-y: auto;
+}
+
+
+[id='ctnc_block1'] > div {
+   margin-bottom:30px;
+  
+}
+
+[id='ctnc_block1'] > div img {
+   border-radius:20px 20px;
+}
+
+
+[id='trendingContent_butt']{
+  font-size:25px;padding:0 10px;
+  background-color: rgba(0, 0, 0, 0);
+                                                    
+}
+
+
+[id='newContent_butt']{
+  font-size:25px;padding:0 10px;
+  background-color: rgba(0, 0, 0, 0);
+                                                    
+}
+
+
+button[data-buttonActive='true']{
+   border-bottom: 4px solid white;
+}
