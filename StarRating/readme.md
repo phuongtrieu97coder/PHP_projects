@@ -129,4 +129,7 @@
 > THP_Movie_Streaming_PHP
 
 
+# 7. Notices:
+
+> Image and video folder are used to testing with this small project and just contains 1 image and 1 video in it which means I used them to test 1 movie content. In my main project, I have more images and videos. 
 
