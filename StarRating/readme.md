@@ -44,7 +44,7 @@
 
 > How many stars a content deserve is based on the highest amount of users rate this content through a specific amount of star. We can find out that number through data from MySQL database based on 'contents_starrating' table through different columns like 'Content_Title', '1star', '2stars', '3stars', '4stars', and '5stars'. For example: If 'Aquaman' has the highest number of users who has rated this movie from '5stars' column, then we will take this number to display into 'Total Rating'.
 
-> Below the movie trailer is 3 buttons, 1 rating, 1 watch movie, and 1 watch trailer buttons. I have another 'watchlist' button in my main project. In this project I juse provide those 3 button above with only JavaScript syntax for 'Rating' button
+> Below the movie trailer is 3 buttons, 1 rating, 1 watch movie, and 1 watch trailer buttons. I have another 'watchlist' button in my main project. In this project I just provide those 3 button above with only JavaScript syntax for 'Rating' button
 
 > If an user click 'Rating' button, then a rating form will appear places in front of a block overlay and in the middle of the page. An user can close this form by clicking any area outside this form (or overlay area) or the 'X' button. 
 

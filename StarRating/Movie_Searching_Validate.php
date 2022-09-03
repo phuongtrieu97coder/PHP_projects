@@ -124,6 +124,13 @@ session_start();
                 $rating = $val['Rating'];
                 $countries = $val['Countries_Of_Origin'];
                 $languages = $val['Languages'];
+
+                /*
+                the session 'movie_select' below can be used to work 
+                with different page or syntaxes that require to take a 
+                specific movie title after the user choose to see a specific
+                content
+                */
                 $_SESSION['movie_select'] = $val['Title'];
               }
          }else{
@@ -132,6 +139,20 @@ session_start();
        
          
 
+         /*
+         The array below is used to add each star data into it
+         that presesent the number of users has rated a content
+
+How many stars a content deserve is based on the highest amount of users 
+rate this content through a specific amount of star. We can find out 
+that number through data from MySQL database based on 
+'contents_starrating' table through different columns like
+ 'Content_Title', '1star', '2stars', '3stars', '4stars', 
+ and '5stars'. For example: If 'Aquaman' has the highest number
+  of users who has rated this movie from '5stars' column, 
+  then we will take this number to display into 'Total Rating'.
+
+         */
          $getRatingStarArray = [];
 
 
@@ -158,6 +179,14 @@ session_start();
                 "4stars" => $val['4stars'],
                 "5stars" => $val['5stars']
          ];
+         /*
+         According to the array above, I want an associative array
+         with different key and value. Each key is each star. I want
+         to find max value of this array first, then I am going to find
+         a specific key through that value and use that key to display 
+         the highest number of stars that had been rated above the movie or 
+         trailer content area
+         */
       }
 
    //totalMaxRatingValue
@@ -204,6 +233,17 @@ session_start();
                                 <span id='search_movie_languages'><?php echo $languages;?></span>
 
                                 <div id='m_tp_block_starRating'>
+
+                                <!-- 
+                                  Display the highest number of stars that had been rated
+
+                                  An user can see how many stars appear above the movie content's trailer.
+                                   Star can have yellow color or white color.
+                                    If the content deserves 4 stars, then this user can
+                                     see 4 yellow star and 1 white star, 4/5 context next to it,
+                                      and Total Rating: with a specific number after that.
+
+                                 -->
                                       <?php
                                       
                                       if($keyOftotalMaxRatingValue == '1star'){
@@ -456,7 +496,11 @@ session_start();
                                                        data-starRating-butt-data='starRating_button_data'>
                                                       <i class='fa fa-star w3-text-yellow'></i>  Rating
                                                       </button>
+<!-- 
 
+ If an user click 'Rating' button, then a rating form will appear places in front of a block overlay and in the middle of the page.
+  An user can close this form by clicking any area outside this form (or overlay area) or the 'X' button.
+ -->
 
                                                        
                                                       <?php require('Main_page_starRatingForm.php');?>
