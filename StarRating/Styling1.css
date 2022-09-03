@@ -1,0 +1,218 @@
+body{
+    background-color: rgb(3, 24, 78);
+}
+
+[id='search_movie_result_block']{
+    padding:0 30px;
+ }
+
+ [id='search_movie_title']{
+    font-size:35px;
+    color:white;
+    letter-spacing:5px;
+}
+
+[id='search_movie_year']{
+    font-size:20px;
+    color:white;
+    margin-right:20px;
+}
+[id='search_movie_rating']{
+    font-size:20px;
+    color:white;
+    margin-right:20px;
+}
+[id='search_movie_duration']{
+    font-size:20px;
+    color:white;
+    margin-right:20px;
+}
+[id='search_movie_countries']{
+    font-size:20px;
+    color:white;
+    margin-right:20px;
+}
+[id='search_movie_languages']{
+    font-size:20px;
+    color:white;
+    margin-right:20px;
+}
+
+
+
+[id='m_tp_block_starRating']{
+    float:right;
+    font-size:20px;
+}
+
+[id='m_tp_block_starRating'] > b {
+    color:white;
+}
+
+
+
+[id='movie_video']{
+    display:none;
+    position:relative;top:-100px;
+  }
+
+
+
+
+  [id='movie_type_block']{
+    width:100%;
+    position:relative;
+    top:0;
+}
+
+
+[id='m_t_b_container1'] span{
+   
+    width:100%;
+    border:2px solid gray;
+    border-radius:30px 30px;
+    font-size:20px;
+    color:white;
+    padding:10px;
+    margin-right:20px;
+}
+
+[id='options_buttons_block']{
+    position:absolute;
+    top:-5px;right:0;
+}
+
+
+[id='OpenStarRatingForm_butt1']{
+    font-size:15px;
+    padding:10px 20px;
+    border:1px solid white;
+    border-radius:20px 20px;
+    background-color:rgb(5, 18, 96);
+    color:white;
+}
+
+
+
+
+[id='starRating_form1']{
+    width:900px;border:3px solid rgb(34, 31, 117);
+    padding:20px;
+    display:none;position:fixed;
+    top:150px;left:350px;z-index:2;
+    background-color:black;
+    color:white;
+    outline: 2px solid rgb(106, 125, 61);
+    outline-offset: 1px;
+}
+
+[id='CloseStarRatingFormButt1']{
+    position: absolute;
+    top:0;right:0;
+    font-size:35px;
+    padding:10px;
+    border:none;
+    color:white;
+}
+
+[id='starRatingForm1TitleBlock']{
+    font-size:32px;
+}
+
+[id='starRatingForm1ContentBlock']{
+    font-size:22px;
+}
+
+[id^='starRating_butt']{
+    font-size:35px;
+    color:white;
+}
+
+button[data-staractivate="activate"] i {
+    color:yellow;
+}
+
+
+[id='0starRatingErrorMessageBlock']{
+    display:none;
+}
+
+[id='0starRatingErrorMessage_resetButt1']{
+    font-size:20px;
+    padding:10px;
+}
+
+
+
+[id='0starRatingErrorMessageInfo']{
+    color:white;
+    font-weight: bold;
+    text-shadow:2px 2px 2px rgb(242, 191, 102);
+}
+
+
+
+
+[id='ThankyouRatingMessageBlock']{
+    display:none;
+}
+
+[id='ThankyouRatingMessage_resetButt1']{
+    font-size:20px;
+    padding:10px;
+}
+
+
+
+[id='ThankyouRatingMessageInfo']{
+    color:white;
+    font-weight: bold;
+    text-shadow:4px 4px 4px rgb(71, 235, 136);
+}
+
+
+
+
+[id='SubmitStarRating_butt1']{
+    width:100%;font-size:25px;
+    background-color: rgba(16, 16, 114, 0.599);
+    color:white;
+    padding:10px;
+    border-radius:30px 30px;
+}
+
+
+[id='StarRatingFormOverlay1']{
+    width:100%;height:100%;position:fixed;top:0;
+    left:0;right:0;bottom:0;z-index:1;
+    background-color:rgba(0, 0, 0, 0.778);display:none;
+}
+
+
+
+
+
+
+[id='add_to_watchlist_butt1']{
+    font-size:15px;
+    padding:10px 20px;
+    border:1px solid white;
+    border-radius:20px 20px;
+}
+   
+   
+[id='watch_movie_butt1']{
+ font-size:15px;
+ padding:10px 20px;
+ border:1px solid white;
+ border-radius:20px 20px;
+}
+   
+   
+   
+[id='watch_trailer_butt1']{
+ font-size:15px;
+ padding:10px 20px;
+ border:1px solid white;
+ border-radius:20px 20px;
+}
