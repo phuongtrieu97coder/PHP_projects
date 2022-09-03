@@ -7,7 +7,27 @@
 # Star Rating Contents
 
 
-# 1.Purpose:
+# 1. Running | Output:
+
+![image](https://user-images.githubusercontent.com/82598726/188285669-b60f5e4d-0301-49cc-a1eb-b7dd51a55897.png)
+
+![image](https://user-images.githubusercontent.com/82598726/188285683-7250a1bd-c56a-47dd-beaa-4fc3bede5cdc.png)
+
+
+![image](https://user-images.githubusercontent.com/82598726/188285689-db8d45d0-1449-4e5d-a879-0f526ee498f3.png)
+
+
+![image](https://user-images.githubusercontent.com/82598726/188285698-43e5b9f4-eb80-43d7-b94d-d1b2021167a1.png)
+
+![image](https://user-images.githubusercontent.com/82598726/188285702-53bf2e98-9990-4245-9ab0-ad3f733f3644.png)
+
+![image](https://user-images.githubusercontent.com/82598726/188285720-329807c9-f6df-480e-b5a8-7bc6ee824125.png)
+
+![image](https://user-images.githubusercontent.com/82598726/188285729-dcce3b7a-e83a-42ab-bad2-ca93dc455222.png)
+
+
+
+# 2.Purpose:
 
 - This project is a small part of THP_Movie_Streaming_PHP Web App that is used to help users rate movie contents through the amount of star from this webpage.
 
@@ -18,7 +38,7 @@
 - It also help users know the ways to rate a movie content through a form contains different star options so that an user can decide to choose how many star they want to rate that content.
 
 
-# 2.How it work:
+# 3.How it work:
 
 > An user can see how many stars appear above the movie content's trailer. Star can have yellow color or white color. If the content deserves 4 stars, then this user can see 4 yellow star and 1 white star, 4/5 context next to it, and Total Rating: with a specific number after that.
 
@@ -43,7 +63,7 @@
 > If an user just see '0/5' display in this form and click 'RATING' button, then the 'YOU MUST RATING AT LEAST 1 STAR TO ACTIVATE RATING BUTTON!!!' will appear with a 'RESET' button. This user has to click 'RESET' button to reset this form and rate again. If not, this user will see this error message everytime he or she click 'Rating' button that places below the movie or movie trailer area.
 
 
-# 3.Technologies:
+# 4.Technologies:
 
 ### a.Programming languages:
 
@@ -65,7 +85,7 @@
 
 > PHP PDO connect MySQL, foreach, if...elseif...else condition, exception, $_GET['...'],$_SESSION, ...
 
-> SQL SELECT, INNER JOIN, WHERE, GROUP BY, HAVING, UPDATE, SET, select a specific column name from scratch
+> SQL SELECT, INNER JOIN, WHERE, GROUP BY, HAVING, UPDATE, SET, select a specific column name from scratch...
 
 ### c.IDE,Software:
 
@@ -1330,7 +1350,7 @@ function Open_starRatingForm1ContentBlock_mainContent(){
 
 ```
 
-# 4.Files|Folders are being used:
+# 5.Files|Folders are being used:
 
 - Movie_Search_Validate.php
 
@@ -1345,11 +1365,9 @@ function Open_starRatingForm1ContentBlock_mainContent(){
 - XAMPP PHPMyAdmin
 
 
-# 7. Running | Output:
 
 
-
-# 9. Sources:
+# 6. Sources:
 
 > THP_Movie_Streaming_PHP
 
