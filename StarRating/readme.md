@@ -117,6 +117,10 @@
 
 - XAMPP PHPMyAdmin
 
+- 'image' folder
+
+- 'video' folder
+
 
 
 
