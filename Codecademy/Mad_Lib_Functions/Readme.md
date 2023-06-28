@@ -25,5 +25,30 @@ For this project, we provide the story, but it will be up to you to create a fun
 
 # 2. Output:
 
+![image](https://github.com/phuongtrieu97coder/PHP_projects/assets/82598726/0d5ec839-8c60-4daf-8d20-f6584407c766)
+
+
 # 3. Prompts:
+
+![image](https://github.com/phuongtrieu97coder/PHP_projects/assets/82598726/92f63895-61a3-43ae-9960-959b05a23f5c)
+
+![image](https://github.com/phuongtrieu97coder/PHP_projects/assets/82598726/9a9a52ec-8181-4d6b-8333-2881cff90ee3)
+
+![image](https://github.com/phuongtrieu97coder/PHP_projects/assets/82598726/8954f1fc-3446-498b-808c-32ceaf5e611e)
+
+![image](https://github.com/phuongtrieu97coder/PHP_projects/assets/82598726/2350868a-19af-4674-9763-ca206998f856)
+
+![image](https://github.com/phuongtrieu97coder/PHP_projects/assets/82598726/28d98edf-e96b-4216-b162-6052cecf44b1)
+
+![image](https://github.com/phuongtrieu97coder/PHP_projects/assets/82598726/9c4881a7-fa5c-4fda-91f6-b6b683a8a116)
+
+![image](https://github.com/phuongtrieu97coder/PHP_projects/assets/82598726/8eec2b0d-58bd-460f-96e7-c98e2939092b)
+
+
+
+
+
+
+
+
 
