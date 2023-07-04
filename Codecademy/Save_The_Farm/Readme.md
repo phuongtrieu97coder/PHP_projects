@@ -32,23 +32,23 @@ Enter php index.php in the terminal.
 <br>
 
 > 2. At the start of the index.php file, we declare several global variables we’ll need throughout the game. Next we include in all of the helpful functions we’ll need to make the game work.<br><br>
-Read through the directions that have been printed to the terminal. The list of commands is printed when the <span style="background-color:gray;color:black">getHelp()</span> function is invoked.<br><br>
-You can see where the other parts are being printed with <span style="background-color:gray;color:black">echo</span> statements in index.php file. Next, we invoke the <span style="background-color:gray;color:black">gameRound()</span> function 25 times—once for each round of the game.<br><br>
+Read through the directions that have been printed to the terminal. The list of commands is printed when the <b>getHelp()</b> function is invoked.<br><br>
+You can see where the other parts are being printed with <b>echo</b> statements in index.php file. Next, we invoke the <b>gameRound()</b> function 25 times—once for each round of the game.<br><br>
 Notice, that the terminal is awaiting user input.
 
 <br>
 
 > 3. Run through several commands in the terminal. <br><br>
-You can type any of the valid commands <span style="background-color:gray;color:black">put on glasses</span>, <span style="background-color:gray;color:black">take off glasses</span>, <span style="background-color:gray;color:black">put on contacts</span>, <span style="background-color:gray;color:black">take off contacts</span>, <span style="background-color:gray;color:black">eat</span>, <span style="background-color:gray;color:black">cook</span>, <span style="background-color:gray;color:black">pee</span>, <span style="background-color:gray;color:black">pick mushrooms</span>, <span style="background-color:gray;color:black">move cupboard</span>, <span style="background-color:gray;color:black">look around</span>, <span style="background-color:gray;color:black">search safe</span>, <span style="background-color:gray;color:black">go</span>, or you can type an invalid command. <br><br>
-Right now, only <span style="background-color:gray;color:black">help</span> and an invalid command should work as expected. The others should just use up a round. You’ll be writing the functions to make each of these commands meaningful.<br><br>
-You can run through 25 commands to end the program or press control+c in the terminal to quit the program.
+You can type any of the valid commands <b>put on glasses</b>, <b>take off glasses</b>, <b>put on contacts</b>, <b>take off contacts</b>, <b>eat</b>, <b>cook</b>, <b>pee</b>, <b>pick mushrooms</b>, <b>move cupboard</b>, <b>look around</b>, <b>search safe</b>, <b>go</b>, or you can type an invalid command. <br><br>
+Right now, only <b>help</b> and an invalid command should work as expected. The others should just use up a round. You’ll be writing the functions to make each of these commands meaningful.<br><br>
+You can run through 25 commands to end the program or press <b>control+c</b> in the terminal to quit the program.
 
 <br>
 
-> 4. Now that we’ve seen how the program works broadly, let’s look at the details of the <span style="background-color:gray;color:black">gameRound()</span> function—this is where the real action happens.<br><br>
+> 4. Now that we’ve seen how the program works broadly, let’s look at the details of the <b>gameRound()</b> function—this is where the real action happens.<br><br>
 Navigate to the file gameRound.php in your code editor.
 <br><br>
-Scan through the <span style="background-color:gray;color:black">gameRound()</span> function on your own. In the next task, we’ll walk through it together.
+Scan through the <b>gameRound()</b> function on your own. In the next task, we’ll walk through it together.
 
 <br>
 
