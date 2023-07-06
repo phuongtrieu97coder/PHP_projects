@@ -46,8 +46,7 @@ session_start();
                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                   
                
-            
-
+               <link rel="stylesheet" type="text/css" href="test1.css">
 
 
               <title>PHUONG WEBSITE</title>
@@ -58,7 +57,7 @@ session_start();
               
               <style>
               
-              
+            
                  
               </style>
        </head>
@@ -70,15 +69,9 @@ session_start();
 
        <body>
 
-
        <?php
-              $string1 = "hello";
-              $string2 = $string1;
 
-              echo $string2 . "<br>";
        ?>
-      
-
        <script>
         
 

@@ -19,8 +19,9 @@ Take your time and have fun!
 
 ![Alt text](image-1.png)
 
+![Alt text](image-2.png)
 
-
+![Alt text](image-3.png)
 
 # 3. Prompts:
 
@@ -211,3 +212,216 @@ echo "\n";
 Use the <b>go</b> command to test each of the actions you wrote within the <b>changeLocation()</b> function. Make sure everything is working as expected.<br><br>
 When you type an invalid command, we tell the player to <b>look around…</b> but the <b>lookAround()</b> function isn’t actually written yet… let’s get on that!
 
+<br>
+
+> 16. In each location, the player should be provided a description of the location they’re currently in. The description will give them ideas of what they can and should do next.<br><br>
+It’s time to write the <b>lookAround()</b> function which will run when the player types <b>look around</b>.<br><br>
+Navigate to the <b>lookAround.php</b> file. For this function, you’ll need access to several <b>global</b> variables: <b>$location</b>, <b>$wearing_glasses</b>, <b>$wearing_contacts</b>, and <b>$moved_cupboard</b>, so declare these at the start of the function body.
+```php
+function lookAround(){
+  global $location, $wearing_glasses, $wearing_contacts, $moved_cupboard;
+ 
+}
+```
+
+<br>
+
+> 17. We allow the player to wear either glasses or contacts, neither, or both. They should only be able to see if they’re wearing either contacts or glasses but not both.<br><br>
+If the player is wearing either contacts or glasses but not both, we’ll provide a <b>switch</b> statement to print a description based on their current location. Otherwise, we should simply print <b>"It's really hard to make out any details...\n"</b>.
+```php
+function lookAround(){
+  global $location, $wearing_glasses, $wearing_contacts, $moved_cupboard;
+  if ($wearing_glasses xor $wearing_contacts){
+    // Our switch will go here:
+ 
+  } else {
+    echo "It's really hard to make out any details...\n";
+  }
+}
+```
+
+<br>
+
+> 18. We’re going to write a <b>switch</b> statement based on the <b>$location</b>.<br><br>
+In the case that they’re in the kitchen, we want to hint that they can go to the bathroom or the woods, and also that they might want to figure out how to cook mushroom soup…<br><br>
+Print <b>"This kitchen comes with all the tools and ingredients needed to cook mushroom soup--- except the mushrooms!\n\nFrom here, you see the door to the *bathroom* and the backdoor, which leads to the *woods*.\n\n"</b>.<br><br>
+The game is won by pushing aside the cupboard and searching the safe, so if they haven’t done this yet, we’ll want to hint them towards it: if they’ve already moved the cupboard, print <b>"The cupboard has been moved aside, and reveals a safe built into the wall.\n"</b>. Otherwise, print <b>"Also, there's a conspicuously large cupboard against a peculiarly worn piece of the wall.\n"</b>.
+```php
+function lookAround(){
+  global $location, $wearing_glasses, $wearing_contacts, $moved_cupboard;
+  if ($wearing_glasses xor $wearing_contacts){
+    switch ($location) {
+      case "kitchen":
+        echo "This kitchen comes with all the tools and ingredients needed to cook mushroom soup--- except the mushrooms!\n\nFrom here, you see the door to the *bathroom* and the backdoor, which leads to the *woods*.\n\n";
+        if ($moved_cupboard){
+          echo "The cupboard has been moved aside, and reveals a safe built into the wall.\n";
+        } else {
+          echo "Also, there's a conspicuously large cupboard against a peculiarly worn piece of the wall.\n";
+        }
+        break;
+    }
+  } else {
+    echo "It's really hard to make out any details...\n";
+  }
+}
+```
+
+<br>
+
+> 19. In the case that they’re in the bathroom, print <b>"Normal bathroom. There's a mirror here. You can get back out to the *kitchen*. You sense a magic presence in the toilet, but you decide to ignore it.\n"</b>.<br><br>
+We want to highlight that from the bathroom, they’re able to go to the kitchen. We also want to throw in a little hint towards the easter egg. 
+
+<br>
+
+> 20. In the case that they’re in the woods, print <b>"These woods aren't actually that terrifying. Unless you're afraid of mushrooms. There are millions of them here!\nYou see the path leading back to your cabin's *kitchen*.\n"</b>.<br><br>
+We want to highlight that from the woods they’re able to go to the kitchen. We also want to alert them to all the mushrooms around…
+```php
+function lookAround(){
+  global $location, $wearing_glasses, $wearing_contacts, $moved_cupboard;
+  if ($wearing_glasses xor $wearing_contacts){
+    switch ($location) {
+      case "kitchen":
+        echo "This kitchen comes with all the tools and ingredients needed to cook mushroom soup--- except the mushrooms!\n\nFrom here, you see the door to the *bathroom* and the backdoor, which leads to the *woods*.\n\n";
+        if ($moved_cupboard){
+          echo "The cupboard has been moved aside, and reveals a safe built into the wall.\n";
+        } else {
+          echo "Also, there's a conspicuously large cupboard against a peculiarly worn piece of the wall.\n";
+        }
+        break;
+      case "bathroom":
+        echo "Normal bathroom. There's a mirror here. You can get back out to the *kitchen*. You sense a magic presence in the toilet, but you decide to ignore it.\n";
+        break;
+      case "woods":
+        echo "These woods aren't actually that terrifying. Unless you're afraid of mushrooms. There are millions of them here!\nYou see the path leading back to your cabin's *kitchen*.\n";
+        break;
+    }
+  } else {
+    echo "It's really hard to make out any details...\n";
+  }
+}
+```
+
+<br>
+
+> 21. The player starts out hungry but needs to be well-fed before they can do the hard work of moving the cupboard aside. They can get full by going to the woods to pick mushrooms, cooking those mushrooms in the kitchen, and then eating the soup they make.<br><br>
+Let’s start with picking the mushrooms. When the player types the command <b>pick mushrooms</b> the <b>pickMushrooms()</b> function is invoked. Navigate to the pickMushrooms.php file.<br><br>
+Within the <b>pickMushrooms()</b> function, you’ll need access to the global variables <b>$location</b> and <b>$has_mushrooms</b>.<br><br>
+If the player’s current location is not the woods, print <b>"There aren't any mushrooms to pick!\n"</b>.<br><br>
+Otherwise, print <b>"You've picked some mushrooms.\n"</b> and change the value of the <b>$has_mushrooms</b> variable to <b>TRUE</b>.
+```php
+function pickMushrooms(){
+    global $location, $has_mushrooms;
+    if ($location !== "woods"){
+     echo "There aren't any mushrooms to pick!\n";
+    } else {
+       echo "You pick some mushrooms.\n";
+       $has_mushrooms = TRUE;
+    }  
+} 
+```
+
+<br>
+
+> 22. When the player types the command <b>cook</b> the <b>cookSoup()</b> function is invoked. Navigate to the <b>cookSoup.php</b> file.<br><br>
+You’ll need access to the <b>global</b> variables <b>$location</b>, <b>$has_mushrooms</b>, and <b>$has_soup</b>.<br><br>
+If it’s not the case that the player’s current location is the kitchen and that they currently have mushrooms, print <b>"You can't cook like this! You need something to cook AND to be in the kitchen.\n"</b>. Otherwise, you should print <b>"You made some mushroom soup. Mushroom is the queen of all soups!\n"</b> and change the value of <b>$has_mushrooms</b> to <b>FALSE</b> and the value of <b>$has_soup</b> to <b>TRUE</b>.
+
+```php
+function cookSoup(){
+    global $location, $has_mushrooms, $has_soup;
+    if (!($location === "kitchen" && $has_mushrooms)){
+      echo "You can't cook like this! You need something to cook AND to be in the kitchen.\n";
+    }
+    else{
+      echo "You made some mushroom soup. Mushroom is the queen of all soups!\n";
+      $has_mushrooms = FALSE;
+      $has_soup = TRUE;
+    }
+}
+```
+
+<br>
+
+> 23. Finally, the player needs to be able to eat their soup. When the player types the command, <b>eat</b> the <b>eatSoup()</b> function is invoked. Navigate to <b>eatSoup.php</b>.<br><br>
+You’ll need access to the <b>global</b> variables <b>$has_soup</b> and <b>$is_hungry</b>. If the player does not have soup, print <b>"You don't have any cooked food to eat!\n"</b>. Otherwise, print <b>"You have eaten the soup!\n"</b> and assign both <b>$has_soup</b> and <b>$is_hungry</b> the value <b>FALSE</b>.
+```php
+function eatSoup(){
+    global $has_soup, $is_hungry; 
+    if (!$has_soup){
+        echo "You don't have any cooked food to eat!\n";
+    } else {
+          echo "You have eaten the soup!\n";
+        $has_soup = FALSE;
+        $is_hungry = FALSE;
+    }
+}
+```
+
+<br>
+
+> 24. The player won’t be able to move the cupboard and reveal the safe if they have to pee. When they enter the <b>pee</b> command. The <b>pee()</b> function is invoked. Navigate to the <b>pee.php</b> to write this function.<br><br>
+You’ll need access to the <b>global</b> variables <b>$location</b> and <b>$needs_to_pee</b>.<br><br>
+If the player’s current location is the bathroom or the player’s current location is the woods, you should print <b>"You relieve yourself.\n"</b> and change the value of <b>$needs_to_pee</b> to <b>FALSE</b>. Otherwise, you should print <b>"Are you crazy? You can't pee here!\n"</b>.
+```php
+function pee(){
+    global $location, $needs_to_pee;
+    if ($location === "bathroom" || $location === "woods"){
+        echo "You relieve yourself.\n";
+        $needs_to_pee = FALSE;
+    } else {
+        echo "Are you crazy? You can't pee here!\n";
+    }
+}
+```
+
+<br>
+
+> 25. The game has been leading the player to move the cupboard. Navigate to the <b>moveCupboard.php</b> file so you can write the <b>moveCupboard()</b> function which will be invoked when the player enters the command <b>move cupboard</b>.<br><br>
+We’ve declared all the <b>global</b> variables you should need. You should declare a variable <b>$ready_to_work</b> to decide if the player is prepared to move the cupboard. <b>$ready_to_work</b> should be <b>TRUE</b> if the player is not hungry and they’re wearing contacts and they are not wearing glasses and they do not need to pee.<br><br>
+>>- If the player’s current location is not the kitchen, you should print <b>"You don't see a cupboard here!\n"</b>.<br><br>
+>>- Otherwise, if the cupboard has already been moved, you should print <b>"You've already moved the cupboard!\n"</b>.<br><br>
+>>- Otherwise, if $ready_to_work is not TRUE, you should print <b>"You're not ready to work! You need to be properly fed, have an empty bladder, and have corrected vision (without dealing with those pesky glasses). Without these things, there's no point in even trying to move the cupboard.\n"</b>.<br><br>
+>>- Otherwise, you should print <b>"You move the cupboard aside. You have revealed a safe crudely fit into the wall behind where the cupboard used to be.\n"</b> and you should change the value of <b>$moved_cupboard</b> to <b>TRUE</b>.
+```php
+function moveCupboard(){
+    global $is_hungry, $wearing_contacts, $wearing_glasses, $needs_to_pee, $location, $moved_cupboard;
+    $ready_to_work = !$is_hungry && $wearing_contacts && !$wearing_glasses && !$needs_to_pee;
+ 
+    if ($location !== "kitchen"){
+        echo "You don't see a cupboard here!\n";
+    } elseif ($moved_cupboard) {
+        echo "You've already moved the cupboard!\n";
+    } elseif (! $ready_to_work){
+        echo "You're not ready to work! You need to be properly fed, have an empty bladder, and have corrected vision (without dealing with those pesky glasses). Without these things, there's no point in even trying to move the cupboard.\n";
+    } else {
+        echo "You move the cupboard aside. You have revealed a safe crudely fit into the wall behind where the cupboard used to be.\n";
+        $moved_cupboard = TRUE;
+    }
+}
+```
+
+<br>
+
+> 26. It’s almost over! Once the safe is revealed, the player can <b>search safe</b> and win the game! Navigate to the <b>searchSafe.php</b> file so that you can write the <b>searchSafe()</b> function.<br><br>
+You’ll need access to the <b>global</b> variables <b>$location</b>, <b>$moved_cupboard</b>, and <b>$rounds_left</b>.<br><br>
+If the player’s current location is not the kitchen or they have not yet moved the cupboard, you should print <b>"You don't see any safe here!\n"</b>. Otherwise, you should print <b>"You search through the safe (the passcode is \"1234\"). With bated breath, you pull out the contents! It's a chocolate Mickey Mouse, wrapped in gold foil. Delicious!\nYOU WIN THE GAME!!!!\n\n"</b> and you should change the value of <b>$rounds_left</b> to <b>1</b>.
+```php
+function searchSafe(){
+    global $location, $moved_cupboard, $rounds_left;
+    if ($location !== "kitchen" || !$moved_cupboard){
+        echo "You don't see any safe here!\n";
+    } else {
+        echo "You search through the safe (the passcode is \"1234\"). With bated breath, you pull out the contents! It's a chocolate Mickey Mouse, wrapped in gold foil. Delicious!\nYOU WIN THE GAME!!!!\n\n";
+        $rounds_left = 1;
+    }
+}  
+```
+
+<br>
+
+> 27. Awesome work! You’ve created a real text adventure game. Time to play-test the game and make sure everything is working. Enter <b>php index.php</b> in the terminal and play through the game.
+
+<br>
+
+> 28. You did amazing! Give yourself a pat on the back. If you’re feeling inspired, you should see the game so far as a jumping off point. You can customize the game to your tastes. You can add even more actions for the player to take.<br><br>
+And once you’ve exhausted this game, try to make a new interactive fiction game from scratch. Your imagination is the limit! We’d love to see what you build, so definitely share any games you make with us!
