@@ -60,8 +60,8 @@ session_start();
 
               
               <style>
-              
-            
+           
+           
                  
               </style>
        </head>
@@ -73,23 +73,24 @@ session_start();
 
        <body>
 
-              <div id="block1">Welcome</div>
+              <div id="block1"></div>
               <div id="block2"></div>
+              <div id="block3"></div>
+           
+       <?php
+     
 
+       ?>      
  
        <script>
-             
-             
-               
+       
 
-
-
-            
-              
        </script>
 
 
 
+
+       
    
     
        </body>
