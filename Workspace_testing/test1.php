@@ -76,11 +76,7 @@ session_start();
               <div id="block1"></div>
               <div id="block2"></div>
               <div id="block3"></div>
-           
-       <?php
-     
-
-       ?>      
+    
  
        <script>
        
