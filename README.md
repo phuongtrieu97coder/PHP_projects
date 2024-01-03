@@ -3,7 +3,11 @@
 
 ![image](https://user-images.githubusercontent.com/82598726/181829065-7ec9da96-4fdb-4e42-b650-56fe73e770fb.png)
 
+
+# PHP Projects
+
 # 1. Purpose:
+
 
 - This repository contains all the projects that have been made using PHP files that combine PHP and other languages most of the time. 
 
