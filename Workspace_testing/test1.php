@@ -61,7 +61,6 @@ session_start();
               <style>
 
 
-
                   
                     
               </style>
@@ -84,22 +83,15 @@ session_start();
               
 
               <?php
-            
+       
               ?>
-          
-
-        
-
-
+   
 
 
        <script>
               "use strict";
-           
+       let getBlock1 = document.querySelector("#block1");
 
-           
-          
-         
 
        </script>
 
